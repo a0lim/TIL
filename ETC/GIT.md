@@ -11,18 +11,45 @@
 4. setup 설정: 기본 default로 진행
     * 'select distination location' : 설치될 경로 지정
     * choosing the default editor used by git: 에디터 선택
-        - use vim(기본 default) 선택(주로 사용하는 에디터가 있다면 변경 가능)
+         - use vim(기본 default) 선택(주로 사용하는 에디터가 있다면 변경 가능)
     * Adjusting the name of the initial branch in new repositories: 기본 branch 설정
       Override the default branch name for new repositories 선택
     * Adjusting your PATH environment: CMD 설정
         - Git use fit from git bash only 선택: Git bash에서만 사용
-- git 설치: install click
+5. git 설치: install click
 
-2. GIT Bash 실행 및 환경설정(config)
-- 윈도우에 설치된 git bash 열기: command에서 환경설정 진행
-- 사용자 이름/이메일 등록
-$git config --global user.name "a0lim"$
+# GIT Bash 실행 및 기본 환경설정(config)
+1. 윈도우에 설치된 git bash 열기: command에서 환경설정 진행
+2. 사용자 이름/이메일 등록
 ```
+$git config --global user.name "a0lim"
 $git config --global user.email "[메일주소]"
 ```
-$e^{i \pi} = -1$
+3. 사용자 이름/이메일 등록 확인
+```
+$git config --list
+```
+
+# 새로운 GIT 저장소 생성
+1. github 페이지에서 원격 저장소 생성
+      * github 페이지 -> 
+3. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
