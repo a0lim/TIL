@@ -1,5 +1,6 @@
 # git 기본 개념
-
+* https://backlog.com/git-tutorial/kr/intro/intro1_2.html
+* 브랜치 설명 시각화: https://steady-coding.tistory.com/280
 ----------------------------------
 # git 설치
 
@@ -30,6 +31,9 @@ $git config --global user.email "[메일주소]"
 ```
 $git config --list
 ```
+
+# GIT 기본 명령어
+* https://psklog.tistory.com/7
 
 # 새로운 GIT 저장소 생성
 1. github 페이지에서 원격 저장소 생성
@@ -82,6 +86,37 @@ git branch -M main
                        
 # 새로운 GIT 저장소 생성
 * 참고: https://www.lainyzine.com/ko/article/how-to-link-github-remote-
+------------------
+* 브랜치 관련 : https://goddaehee.tistory.com/274?category=381481
+* CMD 명령어 : https://simuing.tistory.com/entry/Git-Bash-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC
+   -cd -> 
+*  원격 저장소 URL 변경하기 : https://youngjinmo.github.io/2019/09/git-change-remote-branch-url/
+*  로컬 저장소의 경로 변경: https://sedangdang.tistory.com/147
+*  로컬: https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to-remote
+
+
+** 확인 코드들
+git remote -v
+git log
+git status
+git branch
+$ ls : [ANACONDA] 파일 설치 경로 확인
+
+# ERROR 모음
+* Merge branch 'main' of https://github.com/a0lim/TIL : 브랜치 merge하기
+* Git refusing to merge unrelated histories on rebase : history 반영 안됨
+   - $git pull origin branchname --allow-unrelated-histories
+* git error: failed to push some refs to remote: 기존 pull 이후 push 진행
+   - $git pull --rebase origin main
+git push origin main
+* Remote origin already exists:  기존의 연결 끊기
+   -  $git remote remove origin
+   -  $git remote add origin [새 원격 저장소 url]
+* error: pathspec 'main' did not match any file(s) known to git.: git 체크
+   - $ git checkout -t -b master origin/master 
+* fatal: this operation must be run in a work tree: 디렉토리 안에서 실행-> 상위 폴더에서 실행하기
+* fatal: This operation must be run in a work tree: path 확인 (https://stackoverflow.com/questions/9262801/fatal-this-operation-must-be-run-in-a-work-tree)
+   - https://code-examples.net/ko/q/30eaeb
 
 
 
@@ -89,9 +124,27 @@ git branch -M main
 
 
 
+** 추가 참고
+   - https://github.com/hooong/Github_study
+   - https://jhkang-tech.tistory.com/30
+   - https://simuing.tistory.com/entry/Git-Bash-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC
+   - 초기화, 삭제 : https://koonsland.tistory.com/94?category=1192234
 
 
 
+
+# vs code 연동
+- https://ossam5.tistory.com/169?category=973111
+- https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=zeta0807&logNo=220947761377
+- https://velog.io/@falling_star3/GitHub-%EA%B9%83%ED%97%88%EB%B8%8C-%EC%9B%90%EA%B2%A9%EC%A0%80%EC%9E%A5%EC%86%8C%EC%99%80-VSCode-%EC%97%B0%EB%8F%99-%EB%B0%8F-%EC%97%B0%EB%8F%99-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95git-remote-v
+- https://ojui.tistory.com/16
+- vs code 에서 파일 업로드: https://opentutorials.org/module/2957/23175
+- 
+
+
+# R 연동
+- https://mrchypark.github.io/post/github-rstudio%EB%A1%9C-github-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/
+- https://dlsdn73.tistory.com/657?category=715362
 
 
 
