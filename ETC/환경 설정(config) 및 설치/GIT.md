@@ -1,6 +1,25 @@
 # git 기본 개념
 * https://backlog.com/git-tutorial/kr/intro/intro1_2.html
+
+* Git 영역
+
+(1) Working Directory (Local)
+
+    : 개인 코드 작성
+
+(2) Staging 영역
+
+    :​ git add 를 통해서 수정된 코드를 올리는 영역
+
+(3) Repository
+
+    : ​ git commit 을 통해서 최종 수정본을 제출
+
 * 브랜치 설명 시각화: https://steady-coding.tistory.com/280
+
+# GIT 기본 명령어
+* https://psklog.tistory.com/7
+
 ----------------------------------
 # git 설치
 
@@ -19,21 +38,18 @@
         - Git use fit from git bash only 선택: Git bash에서만 사용
 5. git 설치: install click
 
-# GIT Bash 실행 및 기본 환경설정(config)
+# 0. GIT Bash 실행 및 기본 환경설정(config)
 
 1. 윈도우에 설치된 git bash 열기: command에서 환경설정 진행
 2. 사용자 이름/이메일 등록
 ```
 $git config --global user.name "a0lim"
-$git config --global user.email "[메일주소]"
+$git config --global user.email "[repository 주소]"
 ```
 3. 사용자 이름/이메일 등록 확인
 ```
 $git config --list
 ```
-
-# GIT 기본 명령어
-* https://psklog.tistory.com/7
 
 # 새로운 GIT 저장소 생성
 1. github 페이지에서 원격 저장소 생성
@@ -50,10 +66,10 @@ $git config --list
  * 다른 방법:
       - $ touch [새 원격 저장소의 이름]
 
-      3. 2. 원격 저장소의 디렉터리 초기화 및 .git 폴더 생성
+3. 2. 원격 저장소의 디렉터리 초기화 및 .git 폴더 생성
 ```
 $get init
-````````````
+````
             * 폴더 이름을 다르게 지정하는 법: $get init [새 이름]
       3. 3. 저장소 상태 확인: branch 이름, commit 상태 
 ```
@@ -83,10 +99,73 @@ git commit -m "[커밋 내용]"
 ```
 git branch -M main
 ```
-                       
-# 새로운 GIT 저장소 생성
-* 참고: https://www.lainyzine.com/ko/article/how-to-link-github-remote-
-------------------
+
+# Git 저장소 pull/push
+0. git bash 기본 환경설정
+```
+$git config --list
+$git config --global user.name "a0lim"
+$git config --global user.email "[repository 주소]"
+```
+1. 깃을 초기화 시켜 로컬 저장소 생성
+```
+$ git init 
+```
+2. local과 git repository 연결
+```
+$ git remote add origin http://github.com/a0lim/TIL.git
+```
+2-1. ERROR
+```
+remote origin already exists. ## branch의 remote인 origin이 이미 존재(중복)
+
+$ git remote remove origin ## remote origin의 기존 연결을 끊음
+-> 이후 2번으로 돌아가기
+```
+3. git 확인
+```
+$ git status 
+
+On branch main # main branch 사용
+
+No commits yet # commit 안 함(local 저장이 안 되어있는 상태) 
+
+nothing to commit (create/copy files and use "git add" to track) # local 저장소에 파일 없음
+
+```
+3-1. ERROR
+```
+
+```
+4. remote branch의 연결 확인
+```
+$ git remote -v
+
+origin  http://github.com/a0lim/TIL.git (fetch)
+origin  http://github.com/a0lim/TIL.git (push)
+```
+5. git branch 확인
+```
+$ git branch
+
+* main
+... # branch 목록 리스트 
+```
+5-1. ERROR
+```
+```
+6. 
+```
+$git add .
+$ git commit -m “[commit 내용]”
+```
+7. pull(git repositoㄱy 자료를 local repository로 내려받음)
+```
+$ git pull origin master
+```
+
+----------------
+# 참고
 * 브랜치 관련 : https://goddaehee.tistory.com/274?category=381481
 * CMD 명령어 : https://simuing.tistory.com/entry/Git-Bash-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC
    -cd -> 
@@ -96,10 +175,10 @@ git branch -M main
 
 
 ** 확인 코드들
-git remote -v
-git log
-git status
-git branch
+$ git remote -v
+$ git log
+$ git status
+$ git branch
 $ ls : [ANACONDA] 파일 설치 경로 확인
 
 # ERROR 모음
