@@ -9,7 +9,7 @@
 
 (2) Staging 영역
 
-    :​ git add 를 통해서 수정된 코드를 올리는 영역
+    :​ git add 를 통해서 코드 내용을 올리는 영역
 
 (3) Repository
 
@@ -52,29 +52,26 @@ $git config --list
 ```
 
 # 새로운 GIT 저장소 생성
-1. github 페이지에서 원격 저장소 생성
+## 1. github 페이지에서 원격 저장소 생성
       * git hub 페이지 -> Your repositories 클릭 -> New 클릭-> Repository name에서  [새 원격 저장소의 이름] 입력 -> Create repository 클릭
-2. 로컬 저장소 생성
+## 2. 로컬 저장소 생성
       * 윈도우에서 원하는 파일 주소에서 오른쪽 클릭 -> Git bash here 클릭
-3. git bash CMD에서 원격 저장소와 로컬 저장소 연결
+## 3. git bash CMD에서 원격 저장소와 로컬 저장소 연결
       * 참고: 새 저장소에서 안내되는 명령어
-1. 1. 저장소에 새 파일(README.md) 만들기
+## 1. 1. 저장소에 새 파일(README.md) 만들기
  ```
  echo "# [새 원격 저장소의 이름]" >> README.md 
  // Reinitialized existing Git repository in C:
  ```
- * 다른 방법:
-      - $ touch [새 원격 저장소의 이름]
-
-3. 2. 원격 저장소의 디렉터리 초기화 및 .git 폴더 생성
+## 3. 2. 원격 저장소의 디렉터리 초기화 및 .git 폴더 생성
 ```
-$get init
+$git init
 ````
-            * 폴더 이름을 다르게 지정하는 법: $get init [새 이름]
-      3. 3. 저장소 상태 확인: branch 이름, commit 상태 
+cf) 폴더 이름을 다르게 지정하는 법: $git init [새 이름]
+## 3. 3. 저장소 상태 확인: branch 이름, commit 상태 
 ```
-$get status
-//On branch master
+$git status
+//On branch main
 
 //No commits yet
 
@@ -83,15 +80,15 @@ $get status
 //    README.md
 
 //nothing added to commit but untracked files present (use "git add" to track)
-````````````
-      
-      3. 3. 현재 브랜치의 커밋 전 단계 등록
+````````````      
+## 3. 3. 현재 브랜치의 커밋 전 단계 등록
       
 ```
 $ git add README.md
 ```
-* add 뒤에 .: 모두 커밋
-      3. 4. 커밋 작성
+cf) add .: 모든 파일을 커밋
+
+## 3. 4. 커밋 작성
 ```
 git commit -m "[커밋 내용]"
 ```
@@ -101,55 +98,58 @@ git branch -M main
 ```
 
 # Git 저장소 pull/push
-0. git bash 기본 환경설정
+## 0. git bash 기본 환경설정
 ```
 $git config --list
 $git config --global user.name "a0lim"
 $git config --global user.email "[repository 주소]"
 ```
-1. 깃을 초기화 시켜 로컬 저장소 생성
+## 1. 깃을 초기화 시켜 로컬 저장소 생성
 ```
 $ git init 
 ```
-2. local과 git repository 연결
+## 2. local과 git repository 연결
 ```
 $ git remote add origin http://github.com/a0lim/TIL.git
 ```
-2-1. ERROR
+#### 2-1. ERROR
 ```
-remote origin already exists. ## branch의 remote인 origin이 이미 존재(중복)
+ERROR: remote origin already exists. ## branch의 remote인 origin이 이미 존재(중복)
 
-$ git remote remove origin ## remote origin의 기존 연결을 끊음
+$ git remote remove origin ## remote origin의 기존 연결을 끊음  
 -> 이후 2번으로 돌아가기
 ```
-3. git 확인
+## 3. git 확인
 ```
 $ git status 
 
-On branch main # main branch 사용
+On branch main ## main branch 사용
 
-No commits yet # commit 안 함(local 저장이 안 되어있는 상태) 
+No commits yet ## commit 안 함(local 저장이 안 되어있는 상태) 
 
-nothing to commit (create/copy files and use "git add" to track) # local 저장소에 파일 없음
-
-```
-3-1. ERROR
-```
+nothing to commit (create/copy files and use "git add" to track) ## local 저장소에 파일 없음
 
 ```
-4. remote branch의 연결 확인
+#### 3-1. ERROR
+```
+
+```
+## 4. remote branch의 연결 확인
 ```
 $ git remote -v
 
 origin  http://github.com/a0lim/TIL.git (fetch)
 origin  http://github.com/a0lim/TIL.git (push)
 ```
-5. git branch 확인
+## 5. git branch 확인
 ```
 $ git branch
-
 * main
 ... # branch 목록 리스트 
+cf) $ git branch -a ## 로컬/리모트 저장소의 모든 branch 정보
+    $ git branch -v ## 로컬 branch의 정보 + 마지막 커밋 내역
+    $ git branch -r ## 리모트 저장소의 branch 정보
+
 ```
 5-1. ERROR
 ```
@@ -161,7 +161,7 @@ $ git commit -m “[commit 내용]”
 ```
 7. pull(git repositoㄱy 자료를 local repository로 내려받음)
 ```
-$ git pull origin master
+$ git pull origin main
 ```
 
 ----------------
@@ -173,8 +173,47 @@ $ git pull origin master
 *  로컬 저장소의 경로 변경: https://sedangdang.tistory.com/147
 *  로컬: https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to-remote
 
+------
+## branch 관련 명령어
+* $ git branch [새 branch 이름] ## 로컬에 새로운 branch를 생성
+* $ git checkout -b [새 branch 이름] ## 로컬에 새로운 branch를 생성 + 해당 branch로 이동
+* 원격 저장소에 있는 branch를 가져오기
+    - $ git checkout -t origin/[가져올 branch 이름]
+    - $ git checkout -b [가져올 branch 이름] origin/[가져올 branch 이름] ## 원격 
+* branch 이름을 변경
+    - $ git branch --merged ## 이미 merge된 branch를 표시
+    - $ git branch --no-merged ## 아직 merge가 되지 않은 branch를 표시
+* git branch -d [삭제할 branch 이름] ## 해당 branch를 삭제/아직 merge 되지 않은 커밋이 있는 경우에는 삭제되지 않음
+* git branch -m [변경할 branch 이름] [변경될 branch 이름]
 
-** 확인 코드들
+## log 관련 명령어: branch의 커밋 이력
+* $ git log ## 현재 branch의 커밋 이력 확인
+* $ git log -n[숫자] ## 전체 커밋 중에서 최신 n개의 커밋 확인
+  (=) $ git log HEAD~[숫자] ## HEAD(보고 있는 커밋)
+* $ git log patch[p 도 가능] ## 파일의 수정된 내용 확인
+* $ git log --oneline --graph --decorate --all ## 모든 branch 확인  
+```
+ --oneline : 현재 commit을 한 줄로 요약 
+ --graph : commit 옆에 branch의 흐름을 그래프 확인 
+ --decorate : 브랜치와 태그 등의 참조를 간결히 확인 (원래는 --decorate=short 옵션을 의미)
+ --all : all 옵션이 없을 경우 HEAD와 관계 없는 옵션은 제외하고 확인
+```
+  - $ git log --oneline ## 간단히 커밋 해시와 제목 확인
+  - $ git log --oneline --reverse ## 가장 오래된 커밋부터 확인
+  - $ git log --oneline --graph --decorate ## HEAD와 관련된 커밋을 더 자세히 확인   
+  - $ git log --author-"[커밋 작성자 이름]" ## 해당 커밋 작성자의 커밋만 확인
+  - $ git log --before="[yyyy-mm-dd]" ## 해당 날짜의 이전 커밋만 확인
+  - $ git log --grep="[단어]" ## 해당 단어가 포함된 커밋만 확인
+* $ git show "[commit_hashcode]" ## 특정 commit의 내용만 확인
+   - $ git show "[commit_hashcode]":"[file 이름]" ## 특정 commit에 여러 개의 파일이 있을 때 파일의 내용을 확인
+* $ git diff "[commit_hashcode]" "[commit_hashcode]" ## 2개의 commit을 비교해서 변경 사항 확인
+   - $ git diff "[commit_hashcode]" "[commit_hashcode]" "[파일 이름]" ## 2개의 commit에서 해당하는 파일의 차이 확인
+
+#### 참고: https://dkmqflx.github.io/development/2021/01/16/git-log/
+
+
+
+** 확인 명령어 모음
 $ git remote -v
 $ git log
 $ git status
@@ -192,7 +231,7 @@ git push origin main
    -  $git remote remove origin
    -  $git remote add origin [새 원격 저장소 url]
 * error: pathspec 'main' did not match any file(s) known to git.: git 체크
-   - $ git checkout -t -b master origin/master 
+   - $ git checkout -t -b main origin/main  F
 * fatal: this operation must be run in a work tree: 디렉토리 안에서 실행-> 상위 폴더에서 실행하기
 * fatal: This operation must be run in a work tree: path 확인 (https://stackoverflow.com/questions/9262801/fatal-this-operation-must-be-run-in-a-work-tree)
    - https://code-examples.net/ko/q/30eaeb
