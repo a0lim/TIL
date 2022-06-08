@@ -110,7 +110,7 @@ $ git init
 ```
 ## 2. local과 git repository 연결
 ```
-$ git remote add origin http://github.com/a0lim/TIL.git
+$ git remote add origin https://github.com/a0lim/TIL.git
 ```
 #### 2-1. ERROR
 ```
@@ -138,8 +138,8 @@ nothing to commit (create/copy files and use "git add" to track) ## local 저장
 ```
 $ git remote -v
 
-origin  http://github.com/a0lim/TIL.git (fetch)
-origin  http://github.com/a0lim/TIL.git (push)
+origin  https://github.com/a0lim/TIL.git (fetch)
+origin  https://github.com/a0lim/TIL.git (push)
 ```
 ## 5. git branch 확인
 ```
@@ -150,9 +150,6 @@ cf) $ git branch -a ## 로컬/리모트 저장소의 모든 branch 정보
     $ git branch -v ## 로컬 branch의 정보 + 마지막 커밋 내역
     $ git branch -r ## 리모트 저장소의 branch 정보
 
-```
-5-1. ERROR
-```
 ```
 6. 
 ```
@@ -211,6 +208,37 @@ git rev-list -n 1 HEAD -- [복구하고자 하는 파일의 이름] ## 바로 �
 ### 참고
 * reset/revert : https://velog.io/@njs04210/Git-reset%EA%B3%BC-revert-%EC%95%8C%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0#:~:text=1.%20%EA%B0%9C%EB%85%90(%EC%B0%A8%EC%9D%B4%EC%A0%90),-%EC%9D%BC%EB%8B%A8%20%EA%B0%84%EB%9E%B5%ED%95%98%EA%B2%8C&text=reset%20%3A%20%EC%8B%9C%EA%B0%84%EC%9D%84%20%EC%95%84%EC%98%88%20%EA%B3%BC%EA%B1%B0,commit)%EB%93%A4%EB%A7%8C%20%EC%97%86%EB%8D%98%20%EC%9D%BC%EB%A1%9C%20%EB%A7%8C%EB%93%A0%EB%8B%A4.
 * checkout: https://devlimk1.tistory.com/124
+
+# CLONE: 특정 파일을 복사함
+## 0. config
+* git bash 위치: 새 repository/directory
+```
+$ git config --global user.email "기존의 repository"
+$ git config core.sparseCheckout true ## sparse 환경
+$ git init
+```
+## 1. remote 설정
+```
+$ git remote add -f [remote] [기존의 repository(directory는 불가)]
+
+$ git remote add -f origin https://github.com/a0lim/TIL
+
+```
+## 2. 파일 복사
+```
+$ echo "[복사할 파일의 하위 경로 주소]" >> .git/info/sparse-checkout ## 단일 파일도 가능(뒤에 확장자 표시)
+
+$ echo "PYTHON/study_2022_05" >> .git/info/sparse-checkout
+```
+## 3. 복사된 파일 붙여넣기
+```
+$ git pull origin main
+```
+
+### 참고
+* echo: https://earth-95.tistory.com/92
+* clone --mirror: repository 이동 및 복사 방법
+
 ----------------
 # 참고
 * 브랜치 관련 : https://goddaehee.tistory.com/274?category=381481
