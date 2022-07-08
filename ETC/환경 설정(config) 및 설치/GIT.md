@@ -131,6 +131,7 @@ nothing to commit (create/copy files and use "git add" to track) ## local 저장
 
 ```
 #### 3-1. ERROR
+$ git add --force [파일명]
 ```
 
 ```
@@ -160,6 +161,18 @@ $ git commit -m “[commit 내용]”
 ```
 $ git pull origin main
 cf) $ git pull origin main --allow-unrelated-histories ##
+```
+#### 7-1. ERROR
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+```
+git push --set-upstream origin main ## 파일을 강제로 push
 ```
 ------------------
 # PULL/PUSH 실행 취소(이전 커밋으로 돌아가기)
