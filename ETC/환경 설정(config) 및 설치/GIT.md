@@ -252,6 +252,31 @@ $ git pull origin main
 * echo: https://earth-95.tistory.com/92
 * clone --mirror: repository 이동 및 복사 방법
 
+# rename directiory with histories
+* 상황 : 백준 -> baeckjoon으로 이름 변경 
+* 문제: Commit history가 반영되지 않음
+
+* 참고: https://developer-c.tistory.com/88?category=921295
+
+![image](https://user-images.githubusercontent.com/104348646/179740986-aef664cc-df39-402f-8986-dfd77057106a.png)
+
+(해결 방법 업데이트 예정)
+
+
+## 특정 파일의 log만 보기
+```
+$ git log --oneline -M --follow -- /C/Users/aylim/Desktop/공부/git_local/TIL/baekjoon
+
+```
+
+
+### 참고
+* 특정 파일의 log만 보기: https://kgrz.io/use-git-log-follow-for-file-history.html
+
+* 크롬 앱 사용: https://lumiloves.github.io/2018/06/25/how-to-preserve-file-history-when-renaming-or-moving-in-git
+* create new class 사용: https://itpangpang.tistory.com/282
+* subtree 사용: https://yh0921k.tistory.com/27
+* subtree 사용 2: https://sustainable-dev.tistory.com/119
 ----------------
 # 참고
 * 브랜치 관련 : https://goddaehee.tistory.com/274?category=381481
@@ -260,6 +285,9 @@ $ git pull origin main
 *  원격 저장소 URL 변경하기 : https://youngjinmo.github.io/2019/09/git-change-remote-branch-url/
 *  로컬 저장소의 경로 변경: https://sedangdang.tistory.com/147
 *  로컬: https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to-remote
+
+# pull 전에 fetch로 확인
+https://kodevvon.tistory.com/m/24
 
 ------
 ## branch 관련 명령어
@@ -323,7 +351,8 @@ git push origin main
 * fatal: this operation must be run in a work tree: 디렉토리 안에서 실행-> 상위 폴더에서 실행하기
 * fatal: This operation must be run in a work tree: path 확인 (https://stackoverflow.com/questions/9262801/fatal-this-operation-must-be-run-in-a-work-tree)
    - https://code-examples.net/ko/q/30eaeb
-
+* git push가 안 될 때 / detached HEAD 문제 해결 방법: 임시 branch 생성 및 사용
+    - https://aroma-dev.tistory.com/4
 
 
 
