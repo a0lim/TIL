@@ -1,6 +1,6 @@
 # NOT SOLVED
 
-T = int(input()) ## T is count
+T = int(input())
 
 
 for t in range(0,T):
