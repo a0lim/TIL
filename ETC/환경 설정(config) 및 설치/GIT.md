@@ -152,7 +152,7 @@ cf) $ git branch -a ## 로컬/리모트 저장소의 모든 branch 정보
     $ git branch -r ## 리모트 저장소의 branch 정보
 
 ```
-6. 
+## 6. git add와 commit
 ```
 $git add .
 $ git commit -m “[commit 내용]”
@@ -327,6 +327,10 @@ https://kodevvon.tistory.com/m/24
 
 #### 참고: https://dkmqflx.github.io/development/2021/01/16/git-log/
 
+## add 관련 명령어
+* $ git add -p
+
+#### 참고: https://blog.outsider.ne.kr/1247
 
 
 ** 확인 명령어 모음
