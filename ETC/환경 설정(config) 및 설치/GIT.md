@@ -252,15 +252,52 @@ $ git pull origin main
 * echo: https://earth-95.tistory.com/92
 * clone --mirror: repository 이동 및 복사 방법
 
+
 # rename directiory with histories
-* 상황 : 백준 -> baeckjoon으로 이름 변경 
+* 상황 : 백준 -> baekjoon으로 이름 변경 
 * 문제: Commit history가 반영되지 않음
 
-* 참고: https://developer-c.tistory.com/88?category=921295
+## 0. git filter-repo 설치
+* 관리자 모드로 cmd 창 열기  
+* pip 설치  
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py ## 입력 후 실행
+python git-pip.py ## 입력 후 실행
+```
+* git-fiflter-repo 설치  
+```
+pip install git-filter-repo ## 입력 후 실행
+```
+* 설치 확인
+```
+$ git filter-repo -h ## help 실행
+```
+
+![image](https://user-images.githubusercontent.com/104348646/180924001-b43918bf-73de-4de9-ab9e-78d02c29939a.png)
+
+## 1. 히스로리를 유지하며 이름 변경
+```
+$ git filter-repo --path-rename [old name]:[new name]
+cf) $ git filter-repo --path-rename 백준:baekjoon
+```
+
+### 1-1. ERROR
+
+Aborting: Refusing to destructively overwrite repo history since
+this does not look like a fresh clone.
+  (expected freshly packed repo)
+Please operate on a fresh clone instead.  If you want to proceed
+anyway, use --force.
+```
+$ git filter-repo --force --path-rename [old name]:[new name]
+```
+
+* 참고
+    - git filter-repo: https://github.com/newren/git-filter-repo/blob/main/INSTALL.md
+    - pip 설치: https://mrkim.tistory.com/1
+    - git filter-repo 적용: https://stackoverflow.com/questions/2314652/is-it-possible-to-move-rename-files-in-git-and-maintain-their-history#comment120743678_60511341
 
 ![image](https://user-images.githubusercontent.com/104348646/179740986-aef664cc-df39-402f-8986-dfd77057106a.png)
-
-(해결 방법 업데이트 예정)
 
 
 ## 특정 파일의 log만 보기
