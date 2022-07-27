@@ -376,6 +376,13 @@ $ git push origin main
 # pull 전에 fetch로 확인
 https://kodevvon.tistory.com/m/24
 
+## rebase 절대 금지
+
+만일 사용한 경우, git reset 사용하기
+
+참고: https://americanopeople.tistory.com/206
+
+
 ------
 ## branch 관련 명령어
 * $ git branch [새 branch 이름] ## 로컬에 새로운 branch를 생성
