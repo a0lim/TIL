@@ -317,7 +317,7 @@ $ git log --oneline -M --follow -- /C/Users/aylim/Desktop/공부/git_local/TIL/b
 
 ## 2. 폴더(a) 복사
 ```
-$ git subtree split -p [옮길 폴더 이름] -b [브랜치 이름]
+$ git subtree split - [옮길 폴더 이름] -b [브랜치 이름]
 $ git subtree split -p a -b branch
 
 cf) A reopsitory/a/b/c 를 복사하는 경우
