@@ -292,6 +292,14 @@ anyway, use --force.
 $ git filter-repo --force --path-rename [old name]:[new name]
 ```
 
+## 1-2. ERROR
+bash: syntax error near unexpected token `('
+```
+$ git-filter-repo --path-rename 환경 설정(config) 및 설치:config_set ## problem: 이름에 space와 (, )이 포함되어 있어 에러가 발생함
+$ git-filter-repo --path-rename '환경 설정(config) 및 설치':config_set ## 문제가 있는 파일 이름에 '' 넣기
+```
+
+
 * 참고
     - git filter-repo: https://github.com/newren/git-filter-repo/blob/main/INSTALL.md
     - pip 설치: https://mrkim.tistory.com/1
