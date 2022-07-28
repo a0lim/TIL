@@ -253,7 +253,7 @@ $ git pull origin main
 * clone --mirror: repository 이동 및 복사 방법
 
 
-# rename directiory with histories
+# Rename directiory with histories
 * 상황 : 백준 -> baekjoon으로 이름 변경 
 * 문제: Commit history가 반영되지 않음
 
@@ -275,7 +275,7 @@ $ git filter-repo -h ## help 실행
 
 ![image](https://user-images.githubusercontent.com/104348646/180924001-b43918bf-73de-4de9-ab9e-78d02c29939a.png)
 
-## 1. 히스로리를 유지하며 이름 변경
+## 1. 이름 변경 with histories
 ```
 $ git filter-repo --path-rename [old name]:[new name]
 cf) $ git filter-repo --path-rename 백준:baekjoon
@@ -375,6 +375,7 @@ $ git push origin main
 
 # pull 전에 fetch로 확인
 https://kodevvon.tistory.com/m/24
+
 
 ## rebase 절대 금지
 
