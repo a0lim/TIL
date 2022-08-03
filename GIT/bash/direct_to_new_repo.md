@@ -40,11 +40,5 @@ $ git push origin main
 
 * 참고: https://ashortday.tistory.com/58
 
-
-### 참고
-* 특정 파일의 log만 보기: https://kgrz.io/use-git-log-follow-for-file-history.html
-
-* 크롬 앱 사용: https://lumiloves.github.io/2018/06/25/how-to-preserve-file-history-when-renaming-or-moving-in-git
-* create new class 사용: https://itpangpang.tistory.com/282
 * subtree 사용: https://yh0921k.tistory.com/27
 * subtree 사용 2: https://sustainable-dev.tistory.com/119
