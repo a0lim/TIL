@@ -5,3 +5,8 @@ docsting 작성(코드에 대한 자세한 설명 ex.type 등)
 * error: Missing final-newline
 solution: 코드를 terminal로 실행(Run Python File in Terminal)
 참고: https://www.codingfactory.net/11337
+
+
+### markdown 확장팩 설치
+- Markdown All in One
+- 참고: https://tttsss77.tistory.com/143
